@@ -1,0 +1,19 @@
+server:
+  port: 8082
+
+eureka:
+  client:
+    enabled: false
+
+#feign:
+#  client:
+#    config:
+#      default:
+#        connectTimeout: 100
+#        readTimeout: 3000
+
+product-api:
+  ribbon:
+    listOfServers: http://localhost:8081
+    ConnectTimeout: 500
+    ReadTimeout: 5000
