@@ -12,3 +12,10 @@ product-api:
   ribbon:
     ConnectTimeout: 500
     ReadTimeout: 3000
+
+member-api:
+  ribbon:
+    listOfServers: http://10.178.0.21:8080  #유레카에 등록된 서버 리스트가 존재한다면 의미 없음
+    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList #유레카를 사용할 때 강제로 설정하고 싶은 경우
+    ConnectTimeout: 500
+    ReadTimeout: 3000

@@ -9,13 +9,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController {
 
     private final ProductFeignClient productFeignClient;
+    private final MemberFeignClient memberFeignClient;
 
-    public OrderController(ProductFeignClient productFeignClient) {
+    public OrderController(ProductFeignClient productFeignClient, MemberFeignClient memberFeignClient) {
         this.productFeignClient = productFeignClient;
+        this.memberFeignClient = memberFeignClient;
     }
 
-    @GetMapping
-    public String getOrderInfo() {
+    @GetMapping("/product")
+    public String getProductInfo() {
         return productFeignClient.getProductInfo();
+    }
+
+    @GetMapping("/member")
+    public String getMemberInfo() {
+        return memberFeignClient.getMemberInfo();
     }
 }
